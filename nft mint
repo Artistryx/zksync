@@ -1,0 +1,18 @@
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
+contract NFTMinting {
+    address public minter;
+    ERC721 public nft;
+
+    constructor(address _nft) {
+        minter = msg.sender;
+        nft = ERC721(_nft);
+    }
+
+    function mintNFT(address to) external {
+        require(msg.sender == minter, "Not authorized");
+        // Implement zkSync NFT minting logic here
+    }
+}
